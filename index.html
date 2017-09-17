@@ -37,14 +37,24 @@
   <script src="bower_components/PACE/pace.min.js"></script>
   <script src="bower_components/wow/dist/wow.min.js"></script>
 
-  <!-- Custom and plugin javascript -->
-  <!-- <script src="/static/js/inspinia.js"></script> -->
-
-<!-- GrowingIO -->
-	<script src="text/javascript">
-		$('.modal').on('hidden.bs.modal', function () {
-		$('.video')[0].pause();
+  <!--<script type="text/javascript">jQuery(".modal-backdrop, #myModalBMT .close").live("click", function() { jQuery("#myModalBMT source").attr("src", jQuery("#myModalBMT source").attr("src")); }); </script>-->
+  <script type="text/javascript">
+	  $(function(){
+		$('#myModalBMT').modal({
+			show: false
+		}).on('hidden.bs.modal', function(){
+			$(this).find('video')[0].pause();
 		});
+	});
+	
+	$(function(){
+		$('#myModalKirana').modal({
+			show: false
+		}).on('hidden.bs.modal', function(){
+			$(this).find('video')[0].pause();
+		});
+	});
+	
 	</script>
 
 </head>
@@ -163,8 +173,6 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
-
   
   <section id="about-me" class="features  " style="margin-top: 0px;">
     <div class="container" id="i18_about_me">
@@ -681,7 +689,7 @@
 							</video>
 						</div>
 						<div class="modal-footer">
-						  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						  <button type="button" class="btn btn-default close" data-dismiss="modal">Close</button>
 						</div>
 					  </div>
 					  
@@ -712,7 +720,7 @@
 							</video>
 						</div>
 						<div class="modal-footer">
-						  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						  <button type="button" class="btn btn-default close" data-dismiss="modal">Close</button>
 						</div>
 					  </div>
 					  
